@@ -33,9 +33,6 @@ class Konami {
 
     }
 
-    console.log(this.key_array);
-    console.log(this.key_count);
-
     if (this.key_count === c) {
 
       this.action();
@@ -44,17 +41,17 @@ class Konami {
 
   }
 
-  reset() {
-
-    this.key_array = [];
-    this.key_count = 0;
-
-  }
-
   action() {
 
     alert("Yoo!! KONAMI!!!!");
     this.reset();
+
+  }
+
+  reset() {
+
+    this.key_array = [];
+    this.key_count = 0;
 
   }
 
