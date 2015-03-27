@@ -1,3 +1,9 @@
+/*!
+  * cb-konami-js v0.0.1
+  * Auther: maechabin mail@chab.in http://mae.chab.in/ 
+  * @lisence: license
+  * https://github.com/maechabin/cb-konami-js.git
+  */
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var key in props) { var prop = props[key]; prop.configurable = true; if (prop.value) prop.writable = true; } Object.defineProperties(target, props); } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -5,12 +11,15 @@ var _createClass = (function () { function defineProperties(target, props) { for
 var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
 
 var Konami = (function () {
-  function Konami(cmd) {
+  function Konami(cb, cmd) {
     _classCallCheck(this, Konami);
 
-    this.command = cmd;
     this.key_array = [];
     this.key_count = 0;
+    this.callback = cb || function () {
+      alert("Hello Konami.");
+    };
+    this.command = cmd || [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
   }
 
   _createClass(Konami, {
@@ -38,23 +47,11 @@ var Konami = (function () {
         }
       }
     },
-    action: {
-      value: function action() {
-
-        alert("Yoo!! KONAMI!!!!");
-        this.reset();
-      }
-    },
-    reset: {
-      value: function reset() {
-
-        this.key_array = [];
-        this.key_count = 0;
-      }
-    },
-    init: {
-      value: function init(d) {
+    eventListener: {
+      value: function eventListener() {
         var _this = this;
+
+        var d = window.document;
 
         try {
 
@@ -70,11 +67,28 @@ var Konami = (function () {
           });
         }
       }
+    },
+    action: {
+      value: function action() {
+
+        this.callback();
+        this.reset();
+      }
+    },
+    reset: {
+      value: function reset() {
+
+        this.key_array = [];
+        this.key_count = 0;
+      }
+    },
+    init: {
+      value: function init() {
+
+        this.eventListener();
+      }
     }
   });
 
   return Konami;
 })();
-
-var konami = new Konami([38, 38, 40, 40, 37, 39, 37, 39, 66, 65]);
-konami.init(window.document);

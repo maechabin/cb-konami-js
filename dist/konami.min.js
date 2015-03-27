@@ -1,0 +1,7 @@
+/*!
+  * cb-konami-js v0.0.1
+  * Auther: maechabin mail@chab.in http://mae.chab.in/ 
+  * @lisence: license
+  * https://github.com/maechabin/cb-konami-js.git
+  */
+"use strict";var _createClass=function(){function t(t,n){for(var e in n){var a=n[e];a.configurable=!0,a.value&&(a.writable=!0)}Object.defineProperties(t,n)}return function(n,e,a){return e&&t(n.prototype,e),a&&t(n,a),n}}(),_classCallCheck=function(t,n){if(!(t instanceof n))throw new TypeError("Cannot call a class as a function")},Konami=function(){function t(n,e){_classCallCheck(this,t),this.key_array=[],this.key_count=0,this.callback=n||function(){alert("Hello Konami.")},this.command=e||[38,38,40,40,37,39,37,39,66,65]}return _createClass(t,{keyDown:{value:function(t){var n,e,a=t.keyCode;this.key_array.push(a),n=this.key_array.length-1,e=this.command.length,this.key_array[n]===this.command[n]?this.key_count++:this.reset(),this.key_count===e&&this.action()}},eventListener:{value:function(){var t=this,n=window.document;try{n.addEventListener("keydown",function(n){t.keyDown.call(t,n)},!1)}catch(e){n.attachEvent("keydown",function(n){t.keyDown.call(t,n)})}}},action:{value:function(){this.callback(),this.reset()}},reset:{value:function(){this.key_array=[],this.key_count=0}},init:{value:function(){this.eventListener()}}}),t}();

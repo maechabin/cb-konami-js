@@ -1,12 +1,19 @@
+/*!
+  * cb-konami-js v0.0.1
+  * Auther: maechabin mail@chab.in http://mae.chab.in/ 
+  * @lisence: license
+  * https://github.com/maechabin/cb-konami-js.git
+  */
 "use strict";
 
 class Konami {
 
-  constructor(cmd) {
+  constructor(cb, cmd) {
 
-    this.command = cmd;
     this.key_array = [];
     this.key_count = 0;
+    this.callback = cb || function () {alert("Hello Konami.");};
+    this.command = cmd || [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
 
   }
 
@@ -37,21 +44,9 @@ class Konami {
 
   }
 
-  action() {
+  eventListener() {
 
-    alert("Yoo!! KONAMI!!!!");
-    this.reset();
-
-  }
-
-  reset() {
-
-    this.key_array = [];
-    this.key_count = 0;
-
-  }
-
-  init(d) {
+    let d = window.document;
 
     try {
 
@@ -73,7 +68,24 @@ class Konami {
 
   }
 
-}
+  action() {
 
-var konami = new Konami([38, 38, 40, 40, 37, 39, 37, 39, 66, 65]);
-konami.init(window.document);
+    this.callback();
+    this.reset();
+
+  }
+
+  reset() {
+
+    this.key_array = [];
+    this.key_count = 0;
+
+  }
+
+  init() {
+
+    this.eventListener();
+
+  }
+
+}
