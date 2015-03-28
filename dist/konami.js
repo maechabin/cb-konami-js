@@ -14,12 +14,19 @@ var Konami = (function () {
   function Konami(cb, cmd) {
     _classCallCheck(this, Konami);
 
+    var def = {
+
+      callback: function callback() {
+        alert("Hello Konami.");
+      },
+      command: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
+
+    };
+
     this.key_array = [];
     this.key_count = 0;
-    this.callback = cb || function () {
-      alert("Hello Konami.");
-    };
-    this.command = cmd || [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+    this.callback = cb || def.callback;
+    this.command = cmd || def.command;
   }
 
   _createClass(Konami, {
