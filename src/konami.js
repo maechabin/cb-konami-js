@@ -12,7 +12,7 @@ class Konami {
 
     const def = {
 
-      callback: function () {
+      callback: () => {
         alert("Hello Konami.");
       },
       command: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
@@ -28,8 +28,8 @@ class Konami {
 
   keyDown(e) {
 
-    var i, c;
-    var key = e.keyCode;
+    let i, c;
+    let key = e.keyCode;
 
     this.key_array.push(key);
     i = this.key_array.length - 1;

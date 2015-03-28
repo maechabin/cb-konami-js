@@ -16,7 +16,7 @@ var Konami = (function () {
 
     var def = {
 
-      callback: function callback() {
+      callback: function () {
         alert("Hello Konami.");
       },
       command: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
@@ -33,7 +33,8 @@ var Konami = (function () {
     keyDown: {
       value: function keyDown(e) {
 
-        var i, c;
+        var i = undefined,
+            c = undefined;
         var key = e.keyCode;
 
         this.key_array.push(key);
