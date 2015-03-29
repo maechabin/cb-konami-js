@@ -1,5 +1,5 @@
 /*!
-  * cb-konami-js v0.0.1
+  * cb-konami-js v0.0.4
   * Auther: maechabin mail@chab.in http://mae.chab.in/ 
   * @lisence: license
   * https://github.com/maechabin/cb-konami-js.git
