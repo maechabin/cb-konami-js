@@ -8,7 +8,7 @@
 
 class Konami {
 
-  constructor(cb, cmd) {
+  constructor(cmd) {
 
     const def = {
 
@@ -21,7 +21,7 @@ class Konami {
 
     this.key_array = [];
     this.key_count = 0;
-    this.callback = cb || def.callback;
+    this.callback = def.callback;
     this.command = cmd || def.command;
 
   }
@@ -91,8 +91,9 @@ class Konami {
 
   }
 
-  init() {
+  init(callback) {
 
+    this.callback = callback || this.callback;
     this.eventListener();
 
   }

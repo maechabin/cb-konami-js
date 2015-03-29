@@ -11,7 +11,7 @@ var _createClass = (function () { function defineProperties(target, props) { for
 var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
 
 var Konami = (function () {
-  function Konami(cb, cmd) {
+  function Konami(cmd) {
     _classCallCheck(this, Konami);
 
     var def = {
@@ -25,7 +25,7 @@ var Konami = (function () {
 
     this.key_array = [];
     this.key_count = 0;
-    this.callback = cb || def.callback;
+    this.callback = def.callback;
     this.command = cmd || def.command;
   }
 
@@ -91,8 +91,9 @@ var Konami = (function () {
       }
     },
     init: {
-      value: function init() {
+      value: function init(callback) {
 
+        this.callback = callback || this.callback;
         this.eventListener();
       }
     }

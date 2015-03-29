@@ -4,14 +4,16 @@
 
 <head>
 <meta charset="utf-8">
-<title>cb-konami-js</title>
+<title>cb-konami-js test</title>
 </head>
 
 <body>
 <script src="../dist/konami.min.js"></script>
 <script>
-var konami = new Konami();
-konami.init();
+(function () {
+	var konami = new Konami();
+	konami.init();
+} ());
 </script>
 </body>
 
