@@ -21,6 +21,3 @@ gulp.task('uglify', function () {
 gulp.task('watch', function() {
 	gulp.watch('./src/konami.js', ['babel']);
 });
-
-gulp.task('bb', ['babel']);
-gulp.task('default', ['uglify']);
