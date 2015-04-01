@@ -2,24 +2,23 @@
 
 var gulp = require('gulp');
 var babel = require('gulp-babel');
+var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
+var plumber = require('gulp-plumber');
+
+var src = './src/konami.js';
 
 gulp.task('babel', function () {
-	return gulp.src('./src/konami.js')
+	return gulp.src(src)
+		.pipe(plumber())
 		.pipe(babel())
+		.pipe(concat('konami.min.js'))
+		.pipe(uglify({preserveComments: 'some'}))
 		.pipe(gulp.dest('./dist'));
 });
 
-gulp.task('uglify', ['babel'], function () {
-	gulp.src('./dist/konami.js')
-		.pipe(uglify({preserveComments: 'some'}))
-		.pipe(rename('konami.min.js'))
-		.pipe(gulp.dest('./dist'))
-});
-
 gulp.task('watch', function() {
-	gulp.watch('./src/konami.js', ['babel']);
+	gulp.watch('./src/konami.js', ['default']);
 });
 
-gulp.task('default', ['uglify']);
+gulp.task('default', ['babel']);
