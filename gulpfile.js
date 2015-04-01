@@ -9,7 +9,7 @@ var plumber = require('gulp-plumber');
 var src = './src/konami.js';
 
 gulp.task('babel', function () {
-	return gulp.src(src)
+	gulp.src(src)
 		.pipe(plumber())
 		.pipe(babel())
 		.pipe(concat('konami.min.js'))
@@ -18,7 +18,7 @@ gulp.task('babel', function () {
 });
 
 gulp.task('watch', function() {
-	gulp.watch('./src/konami.js', ['default']);
+	gulp.watch(src, ['default']);
 });
 
 gulp.task('default', ['babel']);
