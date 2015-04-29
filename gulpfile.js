@@ -10,11 +10,10 @@ var src = './src/konami.js';
 
 gulp.task('babel', function () {
 	gulp.src(src)
-		.pipe(plumber())
 		.pipe(babel())
 		.pipe(concat('konami.min.js'))
 		.pipe(uglify({preserveComments: 'some'}))
-		.pipe(gulp.dest('./dist'));
+		.pipe(gulp.dest('./dist', {cwd: './'}));
 });
 
 gulp.task('watch', function() {
