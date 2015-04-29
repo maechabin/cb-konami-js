@@ -13,7 +13,15 @@ export default class Konami {
     const def = {
 
       callback: () => {
-        alert("Hello Konami.");
+
+        let msg = "Hello Konami.";
+
+        if (typeof window === "undefined") {
+          console.log(msg);
+        } else {
+          alert(msg);
+        }
+
       },
       command: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
 
