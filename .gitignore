@@ -1,5 +1,6 @@
-node_modules/
 bower_components/
+node_modules/
+src/konami.ts
+test/.DS_Store
 .DS_Store
 npm-debug.log
-test/.DS_Store
