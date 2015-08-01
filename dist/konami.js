@@ -11,13 +11,6 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
 
-/*!
-  * cb-konami-js v0.1.0
-  * Auther: maechabin mail@chab.in http://mae.chab.in/
-  * @lisence: license
-  * https://github.com/maechabin/cb-konami-js.git
-  */
-
 var Konami = (function () {
   function Konami(cmd) {
     _classCallCheck(this, Konami);
@@ -57,15 +50,12 @@ var Konami = (function () {
         c = this.command.length;
 
         if (this.key_array[i] === this.command[i]) {
-
           this.key_count++;
         } else {
-
           this.reset();
         }
 
         if (this.key_count === c) {
-
           this.action();
         }
       }

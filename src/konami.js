@@ -1,9 +1,3 @@
-/*!
-  * cb-konami-js v0.1.0
-  * Auther: maechabin mail@chab.in http://mae.chab.in/
-  * @lisence: license
-  * https://github.com/maechabin/cb-konami-js.git
-  */
 export default class Konami {
 
   constructor(cmd) {
@@ -42,19 +36,13 @@ export default class Konami {
     c = this.command.length;
 
     if (this.key_array[i] === this.command[i]) {
-
       this.key_count++;
-
     } else {
-
       this.reset();
-
     }
 
     if (this.key_count === c) {
-
       this.action();
-
     }
 
   }

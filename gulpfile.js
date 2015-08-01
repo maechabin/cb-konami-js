@@ -22,11 +22,10 @@ gulp.task("babel", function () {
 	gulp.src(src)
 		.pipe(babel())
 		.pipe(header(banner, {pkg: pkg}))
-		.pipe(gulp.dest("./dist"), {cwd: "./"})
+		.pipe(gulp.dest("./dist"))
 		.pipe(concat("konami.min.js"))
 		.pipe(uglify({preserveComments: "some"}))
-		.pipe(header(banner, {pkg: pkg}))
-		.pipe(gulp.dest("./dist", {cwd: "./"}));
+		.pipe(gulp.dest("./dist"));
 });
 
 gulp.task("watch", function() {
