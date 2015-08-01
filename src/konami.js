@@ -1,18 +1,16 @@
 /*!
-  * cb-konami-js v0.0.4
+  * cb-konami-js v0.1.0
   * Auther: maechabin mail@chab.in http://mae.chab.in/
   * @lisence: license
   * https://github.com/maechabin/cb-konami-js.git
   */
-"use strict";
-
 export default class Konami {
 
   constructor(cmd) {
 
     const def = {
 
-      callback: () => {
+      callback() {
 
         let msg = "Hello Konami.";
 
@@ -68,17 +66,13 @@ export default class Konami {
     try {
 
       d.addEventListener("keydown", (e) => {
-
         this.keyDown.call(this, e);
-
       }, false);
 
     } catch (err) {
 
       d.attachEvent("keydown", (e) => {
-
         this.keyDown.call(this, e);
-
       });
 
     }
@@ -86,24 +80,18 @@ export default class Konami {
   }
 
   action() {
-
     this.callback();
     this.reset();
-
   }
 
   reset() {
-
     this.key_array = [];
     this.key_count = 0;
-
   }
 
   init(callback) {
-
     this.callback = callback || this.callback;
     this.eventListener();
-
   }
 
 }

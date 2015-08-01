@@ -2,3 +2,7 @@ node_modules/
 bower_components/
 .DS_Store
 npm-debug.log
+test/chai.js
+test/mocha.css
+test/mocha.js
+test.html
