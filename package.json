@@ -1,10 +1,10 @@
 {
   "name": "cb-konami-js",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "konami command",
   "main": "./dist/konami.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "open test/index1.html"
   },
   "repository": {
     "type": "git",
