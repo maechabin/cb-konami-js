@@ -1,6 +1,6 @@
 export default class Konami {
 
-  constructor(cmd) {
+  constructor(cmd = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]) {
 
     const def = {
 
@@ -14,15 +14,14 @@ export default class Konami {
           alert(msg);
         }
 
-      },
-      command: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
+      }
 
     };
 
     this.key_array = [];
     this.key_count = 0;
     this.callback = def.callback;
-    this.command = cmd || def.command;
+    this.command = cmd;
 
   }
 

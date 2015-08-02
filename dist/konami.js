@@ -1,5 +1,5 @@
 /**
- * cb-konami-js - konami command
+ * cb-konami-js - konami code
  * @version v0.1.0
  * @author maechabin mail@chab.in http://mae.chab.in/
  * @license mit
@@ -12,7 +12,9 @@ var _createClass = (function () { function defineProperties(target, props) { for
 var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
 
 var Konami = (function () {
-  function Konami(cmd) {
+  function Konami() {
+    var cmd = arguments[0] === undefined ? [38, 38, 40, 40, 37, 39, 37, 39, 66, 65] : arguments[0];
+
     _classCallCheck(this, Konami);
 
     var def = {
@@ -26,15 +28,14 @@ var Konami = (function () {
         } else {
           alert(msg);
         }
-      },
-      command: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
+      }
 
     };
 
     this.key_array = [];
     this.key_count = 0;
     this.callback = def.callback;
-    this.command = cmd || def.command;
+    this.command = cmd;
   }
 
   _createClass(Konami, {
