@@ -5,15 +5,12 @@ export default class Konami {
     const def = {
 
       callback() {
-
         let msg = "Hello Konami.";
-
         if (typeof window === "undefined") {
-          console.log(msg);
+          console.log(`${msg}`);
         } else {
-          alert(msg);
+          alert(`${msg}`);
         }
-
       }
 
     };
@@ -27,7 +24,8 @@ export default class Konami {
 
   keyDown(e) {
 
-    let i, c;
+    let i = 0;
+    let c = 0;
     let key = e.keyCode;
 
     this.key_array.push(key);
@@ -38,6 +36,7 @@ export default class Konami {
       this.key_count++;
     } else {
       this.reset();
+      return;
     }
 
     if (this.key_count === c) {
@@ -76,8 +75,8 @@ export default class Konami {
     this.key_count = 0;
   }
 
-  init(callback) {
-    this.callback = callback || this.callback;
+  init(callback = this.callback) {
+    this.callback = callback;
     this.eventListener();
   }
 

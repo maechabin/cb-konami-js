@@ -20,13 +20,11 @@ var Konami = (function () {
     var def = {
 
       callback: function callback() {
-
         var msg = "Hello Konami.";
-
         if (typeof window === "undefined") {
-          console.log(msg);
+          console.log("" + msg);
         } else {
-          alert(msg);
+          alert("" + msg);
         }
       }
 
@@ -42,8 +40,8 @@ var Konami = (function () {
     keyDown: {
       value: function keyDown(e) {
 
-        var i = undefined,
-            c = undefined;
+        var i = 0;
+        var c = 0;
         var key = e.keyCode;
 
         this.key_array.push(key);
@@ -54,6 +52,7 @@ var Konami = (function () {
           this.key_count++;
         } else {
           this.reset();
+          return;
         }
 
         if (this.key_count === c) {
@@ -93,8 +92,10 @@ var Konami = (function () {
       }
     },
     init: {
-      value: function init(callback) {
-        this.callback = callback || this.callback;
+      value: function init() {
+        var callback = arguments[0] === undefined ? this.callback : arguments[0];
+
+        this.callback = callback;
         this.eventListener();
       }
     }
