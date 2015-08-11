@@ -77,7 +77,10 @@ export default class Konami {
 
   init(callback = this.callback) {
     this.callback = callback;
-    this.eventListener();
+    setTimeout(() => {
+      this.eventListener();
+    }, 0);
+
   }
 
 }

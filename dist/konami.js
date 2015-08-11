@@ -93,10 +93,14 @@ var Konami = (function () {
     },
     init: {
       value: function init() {
+        var _this = this;
+
         var callback = arguments[0] === undefined ? this.callback : arguments[0];
 
         this.callback = callback;
-        this.eventListener();
+        setTimeout(function () {
+          _this.eventListener();
+        }, 0);
       }
     }
   });
