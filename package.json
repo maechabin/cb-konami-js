@@ -1,6 +1,6 @@
 {
   "name": "cb-konami-js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "konami code",
   "main": "./dist/konami.min.js",
   "scripts": {
