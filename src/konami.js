@@ -24,12 +24,13 @@ export default class Konami {
 
   keyDown(e) {
 
-    let i = 0;
-    let c = 0;
-    let key = e.keyCode;
+    let l = this.key_array.length,
+        i = 0,
+        c = 0,
+        key = e.keyCode;
 
-    this.key_array.push(key);
-    i = this.key_array.length - 1;
+    this.key_array[l] = key;
+    i = l - 1;
     c = this.command.length;
 
     if (this.key_array[i] === this.command[i]) {
@@ -52,13 +53,13 @@ export default class Konami {
     try {
 
       d.addEventListener("keydown", (e) => {
-        this.keyDown.call(this, e);
+        this.keyDown(e);
       }, false);
 
     } catch (err) {
 
       d.attachEvent("keydown", (e) => {
-        this.keyDown.call(this, e);
+        this.keyDown(e);
       });
 
     }

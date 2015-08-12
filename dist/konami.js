@@ -40,12 +40,13 @@ var Konami = (function () {
     keyDown: {
       value: function keyDown(e) {
 
-        var i = 0;
-        var c = 0;
-        var key = e.keyCode;
+        var l = this.key_array.length,
+            i = 0,
+            c = 0,
+            key = e.keyCode;
 
-        this.key_array.push(key);
-        i = this.key_array.length - 1;
+        this.key_array[l] = key;
+        i = l - 1;
         c = this.command.length;
 
         if (this.key_array[i] === this.command[i]) {
@@ -69,12 +70,12 @@ var Konami = (function () {
         try {
 
           d.addEventListener("keydown", function (e) {
-            _this.keyDown.call(_this, e);
+            _this.keyDown(e);
           }, false);
         } catch (err) {
 
           d.attachEvent("keydown", function (e) {
-            _this.keyDown.call(_this, e);
+            _this.keyDown(e);
           });
         }
       }
