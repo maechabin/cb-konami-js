@@ -21,9 +21,7 @@ var Konami = (function () {
 
       callback: function callback() {
         var msg = "Hello Konami.";
-        if (typeof window === "undefined") {
-          console.log("" + msg);
-        } else {
+        if (typeof window !== "undefined") {
           alert("" + msg);
         }
       }
@@ -59,6 +57,7 @@ var Konami = (function () {
         if (this.key_count === c) {
           this.action();
         }
+        return;
       }
     },
     eventListener: {

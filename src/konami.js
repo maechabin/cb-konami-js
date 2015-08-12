@@ -6,9 +6,7 @@ export default class Konami {
 
       callback() {
         let msg = "Hello Konami.";
-        if (typeof window === "undefined") {
-          console.log(`${msg}`);
-        } else {
+        if (typeof window !== "undefined") {
           alert(`${msg}`);
         }
       }
@@ -43,6 +41,7 @@ export default class Konami {
     if (this.key_count === c) {
       this.action();
     }
+    return;
 
   }
 
