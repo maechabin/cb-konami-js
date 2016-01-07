@@ -9,8 +9,8 @@ WebサイトにKonamiコマンドを実装するJavaScriptプラグイン。
 を打った後に、「konami」とアラートが表示されます。
 ```js
 (function () {
-	var konami = new Konami();
-	konami.init();
+  var konami = new Konami();
+  konami.init();
 } ());
 ```
 
@@ -29,8 +29,8 @@ distディレクトリ内の「konami.min.js」をページに読み込みます
 ```js
 <script>
 (function () {
-	var konami = new Konami();
-	konami.init();
+  var konami = new Konami();
+  konami.init();
 } ());
 </script>
 ```
@@ -38,11 +38,11 @@ distディレクトリ内の「konami.min.js」をページに読み込みます
 ```js
 <script>
 (function () {
-	var konami = new Konami();
+  var konami = new Konami();
   var foo = function () {
-  	console.log("bar"):
+    console.log("bar"):
   };
-	konami.init(foo);
+  konami.init(foo);
 } ());
 </script>
 ```
@@ -51,9 +51,9 @@ distディレクトリ内の「konami.min.js」をページに読み込みます
 ```js
 <script>
 (function () {
-	var konami = new Konami();
-	konami.init(function () {
-  	console.log("bar");
+  var konami = new Konami();
+  konami.init(function () {
+    console.log("bar");
   });
 } ());
 </script>
@@ -66,9 +66,9 @@ distディレクトリ内の「konami.min.js」をページに読み込みます
 ```js
 <script>
 (function () {
-	var konami = new Konami([66, 65, 76, 83]);
-	konami.init(function () {
-  	alert("bals");
+  var konami = new Konami([66, 65, 76, 83]);
+  konami.init(function () {
+    alert("bals");
   });
 } ());
 </script>
