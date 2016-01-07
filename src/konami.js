@@ -1,16 +1,12 @@
-export default class Konami {
+class Konami {
 
   constructor(cmd = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]) {
 
     const def = {
-
       callback() {
         let msg = "Hello Konami.";
-        if (typeof window !== "undefined") {
-          alert(`${msg}`);
-        }
+        alert(`${msg}`);
       }
-
     };
 
     this.key_array = [];
@@ -50,17 +46,13 @@ export default class Konami {
     let d = window.document;
 
     try {
-
       d.addEventListener("keydown", (e) => {
         this.keyDown(e);
       }, false);
-
     } catch (err) {
-
       d.attachEvent("keydown", (e) => {
         this.keyDown(e);
       });
-
     }
 
   }

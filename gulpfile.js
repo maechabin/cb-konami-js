@@ -1,14 +1,14 @@
 "use strict";
 
-var gulp = require('gulp');
-var babel = require('gulp-babel');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var plumber = require('gulp-plumber');
-var header = require('gulp-header');
+var gulp = require("gulp");
+var babel = require("gulp-babel");
+var concat = require("gulp-concat");
+var uglify = require("gulp-uglify");
+var plumber = require("gulp-plumber");
+var header = require("gulp-header");
+var pkg = require("./package.json");
 
 var src = "./src/*.js";
-var pkg = require("./package.json");
 var banner = ["/**",
   " * <%= pkg.name %> - <%= pkg.description %>",
   " * @version v<%= pkg.version %>",
@@ -28,7 +28,7 @@ gulp.task("babel", function () {
 		.pipe(gulp.dest("./dist"));
 });
 
-gulp.task("watch", function() {
+gulp.task("watch", function () {
 	gulp.watch(src, ["default"]);
 });
 

@@ -1,6 +1,6 @@
 /**
  * cb-konami-js - konami code
- * @version v0.1.2
+ * @version v0.1.3
  * @author maechabin mail@chab.in http://mae.chab.in/
  * @license mit
  * @repository https://github.com/maechabin/cb-konami-js.git
@@ -18,14 +18,10 @@ var Konami = (function () {
     _classCallCheck(this, Konami);
 
     var def = {
-
       callback: function callback() {
         var msg = "Hello Konami.";
-        if (typeof window !== "undefined") {
-          alert("" + msg);
-        }
+        alert("" + msg);
       }
-
     };
 
     this.key_array = [];
@@ -67,12 +63,10 @@ var Konami = (function () {
         var d = window.document;
 
         try {
-
           d.addEventListener("keydown", function (e) {
             _this.keyDown(e);
           }, false);
         } catch (err) {
-
           d.attachEvent("keydown", function (e) {
             _this.keyDown(e);
           });
@@ -107,5 +101,3 @@ var Konami = (function () {
 
   return Konami;
 })();
-
-module.exports = Konami;
