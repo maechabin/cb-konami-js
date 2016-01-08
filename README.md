@@ -18,6 +18,22 @@ WebサイトにKonamiコマンドを実装するJavaScriptプラグイン。
 
 [http://jsrun.it/maechabin/UoiG](http://jsrun.it/maechabin/UoiG)
 
+## Download
+
+こちらのページから[ダウンロード](https://github.com/maechabin/cb-konami-js/archive/master.zip)するか、`[git clone]`コマンドでローカルにコピーします。
+
+```
+$ git clone git@github.com:maechabin/cb-konami-js.git 任意のディレクトリ名
+```
+
+npm経由でも入手可能です。
+```
+$ npm install --save cb-konami-js
+```
+
+機能の実装に使用するファイルは以下のjsファイルとなります。
+- dist/konami.min.js
+
 ## Usage
 
 distディレクトリ内の「konami.min.js」をページに読み込みます。
