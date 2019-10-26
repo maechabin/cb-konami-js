@@ -4,7 +4,8 @@
   "description": "konami code",
   "main": "./dist/konami.min.js",
   "scripts": {
-    "test": "open test/index1.html"
+    "test": "open test/index1.html",
+    "build": "parcel src/konami.ts"
   },
   "repository": {
     "type": "git",
@@ -13,5 +14,6 @@
   "author": "maechabin mail@chab.in http://mae.chab.in/",
   "license": "mit",
   "devDependencies": {
+    "parcel-bundler": "^1.12.4",
   }
 }

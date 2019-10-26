@@ -5,3 +5,6 @@ src/.DS_Store
 test/.DS_Store
 .DS_Store
 npm-debug.log
+
+# parcel
+.cache
