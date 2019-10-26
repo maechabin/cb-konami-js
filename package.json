@@ -15,5 +15,6 @@
   "license": "mit",
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
+    "typescript": "^3.6.4"
   }
 }
