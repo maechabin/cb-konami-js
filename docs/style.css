@@ -1,0 +1,16 @@
+body {
+  padding-top: 16px;
+  background-color: #000;
+  color: #fff;
+}
+
+.konami {
+  text-align: center;
+  font-size: 24px;
+  line-height: 2;
+}
+
+.link a {
+  font-size: 14px;
+  color: #fff;
+}
