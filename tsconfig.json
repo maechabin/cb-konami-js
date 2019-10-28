@@ -1,9 +1,22 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext"
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "module": "umd",
+    "target": "es5",
+    "lib": [
+      "dom",
+      "es2018"
+    ]
   },
   "include": [
     "src/**/*"
+  ],
+  "exclude": [
+    "node_module"
   ]
 }
