@@ -16,7 +16,7 @@ WebサイトにKonamiコマンドを実装するJavaScriptプラグイン。
 
 ## Demo
 
-[http://jsrun.it/maechabin/UoiG](http://jsrun.it/maechabin/UoiG)
+[http://www.maechabin.com/cb-konami-js/](http://www.maechabin.com/cb-konami-js/)
 
 ## Download
 
