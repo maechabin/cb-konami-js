@@ -1,8 +1,8 @@
-export default class Konami {
-  keys: number[] = [];
-  keyCount = 0;
-  command: number[] = [];
-  callback = () => {
+class Konami {
+  private keys: number[] = [];
+  private keyCount = 0;
+  private command: number[] = [];
+  private callback = () => {
     let msg = "Hello Konami.";
     alert(`${msg}`);
   };
@@ -13,7 +13,7 @@ export default class Konami {
     this.command = command;
   }
 
-  handleKeyDown(event: KeyboardEvent): void {
+  private handleKeyDown(event: KeyboardEvent): void {
     const keyCode = event.keyCode;
     console.log(keyCode);
     const currentKeyCount = this.keys.length;
@@ -36,7 +36,7 @@ export default class Konami {
     }
   }
 
-  eventListener(): void {
+  private eventListener(): void {
     let document = window.document;
 
     try {
@@ -50,12 +50,12 @@ export default class Konami {
     }
   }
 
-  action(): void {
+  private action(): void {
     this.callback();
     this.reset();
   }
 
-  reset(): void {
+  private reset(): void {
     this.keys = [];
     this.keyCount = 0;
   }
