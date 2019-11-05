@@ -1,8 +1,9 @@
 body {
-  padding-top: 16px;
   background-color: #000;
   color: #fff;
   text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
 h1 {
@@ -11,13 +12,19 @@ h1 {
 }
 
 .konami {
-  max-width: 560px;
+  max-width: 640px;
   width: 100%;
   margin: 32px auto;
   padding: 32px;
-  border: 1px solid #fff;
+  border: 2px solid #fff;
+  border-radius: 16px;
   font-size: 24px;
   line-height: 2;
+  box-sizing: border-box;
+}
+
+.cmd {
+  font-family: monospace;
 }
 
 .konami p,
