@@ -2,12 +2,27 @@ body {
   padding-top: 16px;
   background-color: #000;
   color: #fff;
+  text-align: center;
+}
+
+h1 {
+  font-size: 56px;
+  margin-bottom: 8px;
 }
 
 .konami {
-  text-align: center;
+  max-width: 560px;
+  width: 100%;
+  margin: 32px auto;
+  padding: 32px;
+  border: 1px solid #fff;
   font-size: 24px;
   line-height: 2;
+}
+
+.konami p,
+.konami pre {
+  margin: 8px;
 }
 
 .link a {
